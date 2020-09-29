@@ -13,7 +13,9 @@ L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 let poly 
 L.control.scale().addTo(map);
 function update() {
-    fetch('/data')
+    fetch('/data',{headers:{
+        'Content-Type': 'application/json'
+    }})
         .then((response) => response.json())
         .then((json) => {
             console.log(json);
