@@ -14,7 +14,7 @@ database.connect((err) => {
     if (err) {
         throw err;
     }
-    console.log('Connected to DataBase');
+    console.log('Connected to DB');
 });
 module.exports = database
 //Server UDP (sniffer)
