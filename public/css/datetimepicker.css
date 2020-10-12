@@ -256,8 +256,9 @@
   .daterangepicker .calendar-time {
     text-align: center;
     margin: 4px auto 0 auto;
-    line-height: 30px;
+    line-height: 10px;
     position: relative;
+    
   }
   
   .daterangepicker .calendar-time select.disabled {

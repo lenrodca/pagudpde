@@ -48,10 +48,12 @@ img{
 .punto1{
 	font-size: x-large;
 	text-align: center;
+	
 }
+
 #map{
-	height: 600px;
-	width: 1080px;
+	height: 550px;
+	width: 1200px;
 	z-index: 1;
 	margin-left: auto;
   	margin-right: auto;
