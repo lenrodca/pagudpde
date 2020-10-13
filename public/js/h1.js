@@ -21,8 +21,8 @@ window.onload = function(){
           startDate: moment().subtract(12, 'hour'),
           endDate: moment(),
           timePicker24Hour: false,
-          timePickerIncrement: 1,
-          timePickerSeconds: true,
+          timePickerIncrement: 15,
+          timePickerSeconds: false,
           "maxDate": moment(),
           startValue: moment(),
           locale: {

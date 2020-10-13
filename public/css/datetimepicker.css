@@ -251,6 +251,7 @@
     padding: 2px;
     outline: 0;
     font-size: 12px;
+    display: inline-block;
   }
   
   .daterangepicker .calendar-time {
@@ -273,7 +274,7 @@
     border-top: 1px solid #ddd;
     display: none;
     line-height: 12px;
-    vertical-align: middle;
+    vertical-align: baseline;
   }
   
   .daterangepicker .drp-selected {
