@@ -61,8 +61,6 @@ img{
 	z-index: 1;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 5px;
-	margin-bottom: 10px;
 }
 #range{
 	height: auto;
@@ -70,10 +68,10 @@ img{
 
 .Boton{
 	font-size: x-large;
-	text-align: center;
+	/* text-align: center; */
 	color:white;
 	margin-top: auto;
+	margin-bottom: 10px;
 }
-
 
 
