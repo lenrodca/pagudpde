@@ -196,7 +196,7 @@ window.onload = function(){
      }
      t2 = document.createElement("p")
      t2.id = "t2"
-     t2.innerText = `Lat: ${datos[range.value].latitud} , long: ${datos[range.value].longitud}, fecha y hora: ${datos[range.value].fechaYhora} `
+     t2.innerText = `Lat: ${datos[range.value].latitud}    Long: ${datos[range.value].longitud}   Fecha y hora: ${datos[range.value].fechaYhora} `
      di.appendChild(t2)
      marcador.setLatLng(new L.LatLng(datos[range.value].latitud,datos[range.value].longitud))
      nt = 1
