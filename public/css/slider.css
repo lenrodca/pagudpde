@@ -1,8 +1,6 @@
 .slider {
     -webkit-appearance: none;
     width: 60%;
-  
-    height: 25px;
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
@@ -20,7 +18,7 @@
     appearance: none;
     width: 25px;
     height: 25px;
-    background: #5dbcd2;
+    background: #49bcd6;
     cursor: pointer;
   }
   #t2{
@@ -35,3 +33,12 @@
     background: #14324f;
     cursor: pointer;
   }
+
+  #parrafo{
+    text-align: center; 
+    color:white;
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  
