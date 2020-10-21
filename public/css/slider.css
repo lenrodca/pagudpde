@@ -1,12 +1,14 @@
 .slider {
     -webkit-appearance: none;
-    width: 100%;
+    width: 60%;
+  
     height: 25px;
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
+    margin-bottom: 5px;
   }
   
   .slider:hover {
@@ -21,10 +23,15 @@
     background: #5dbcd2;
     cursor: pointer;
   }
+  #t2{
+    font-size: 20px;
+    margin-bottom: 5px;
+    padding-bottom: 2px;
+  }
   
   .slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
-    background: #041424;
+    background: #14324f;
     cursor: pointer;
   }

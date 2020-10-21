@@ -68,10 +68,10 @@ img{
 
 .Boton{
 	font-size: x-large;
-	/* text-align: center; */
+	text-align: center; 
 	color:white;
 	margin-top: auto;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 }
 
 
