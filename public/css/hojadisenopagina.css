@@ -61,8 +61,11 @@ img{
 	z-index: 1;
 	margin-left: auto;
 	margin-right: auto;
-
 }
+#range{
+	height: auto;
+}
+
 .Boton{
 	font-size: x-large;
 	/* text-align: center; */
