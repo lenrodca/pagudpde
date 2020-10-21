@@ -10,6 +10,16 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css"
+		/>
+		<link rel="stylesheet" href="../public/css/hojadisenopagina.css">
+		<link rel="stylesheet" href="../public/css/slider.css">
+
+		<link rel="stylesheet" type="text/css" href="../public/css/datetimepicker.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@500&display=swap" rel="stylesheet">
+		</head>
 	</head>
 	<body class="subpage">
 
@@ -22,7 +32,7 @@
 		<!-- Nav -->
 		<nav id="menu">
 			<ul class="links">
-				<li><a href="#main">Tiempo Real</a></li>
+				<li><a href="/">Tiempo Real</a></li>
 				<li><a href="/historicos1">Historicos (Tiempo)</a></li>
 				<li><a href="/historicos2">Historicos (Espacio)</a></li>
 			</ul>
@@ -30,10 +40,28 @@
 
 		<!-- Main -->
 			<div id="main">
-				<section class="wrapper style1">
+			<!-- Consultas -->
+				<section class="Boton">
+					<div class="Boton">
+						<h1>Presione 2 veces el mapa para crear un rectangulo</h1>
+						<!-- <input type="submit" name="datetimes" id="dtp" /> -->
+						<div id="after">
+						</div>
+						<br><br>
+						<input type="submit" value="Consultar" id="button" />
+						<input type="submit" value="Limpiar" id="button2" />
 
+					</div>
+				</section>
+				<!-- One -->
+				<section class="Boton">
+					
+					<div class="punto2">
+						<div id="map"></div>
+					</div>
 				</section>
 			</div>
+			
 
 		<!-- Footer -->
 		<footer id="footer">
@@ -79,6 +107,11 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+			<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script> -->
+			<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+			<script src="/js/h2.js"></script>
 
 	</body>
 </html>

@@ -52,6 +52,21 @@ app.post('/h1',(req,res)=>{
     
 });
 
+app.post('/h2',(req,res)=>{
+    var sql = "SELECT * FROM localitation WHERE (latitud  BETWEEN ? AND ? )AND (longitud  BETWEEN ? AND ?)";
+    var value = [
+        req.body.lat1,
+        req.body.lat2,
+        req.body.lon1,
+        req.body.lon2
+    ];
+    database.query(sql, value, function(err, result) {
+        if (err) throw err;
+        res.json(result);
+        //con.end();
+      });
+});
+
 app.listen('49152', function () {
 	console.log(`Example app listening at http://localhost:8080`)
 });
