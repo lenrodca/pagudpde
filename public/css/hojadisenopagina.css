@@ -64,13 +64,18 @@ img{
 }
 #range{
 	height: auto;
+	position: absolute;
+	right: 0px;
+	
 }
 
 .Boton{
 	font-size: x-large;
-	text-align: center; 
+	text-align: left; 
 	color:white;
 	margin-top: auto;
 	margin-bottom: 15px;
+	margin-left: 10px;
+	overflow: visible;
 }
 

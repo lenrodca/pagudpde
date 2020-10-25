@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="../public/css/hojadisenopagina.css">
+		<link rel="stylesheet" href="../public/css/slider.css">
 		<link
 			rel="stylesheet"
 			href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css"
@@ -43,11 +44,12 @@
 			<!-- Consultas -->
 				<section class="Boton">
 					<div class="Boton">
-						<h1 style="padding-top: 10px;text-align: center; margin-bottom: 2px;">Ingrese Intervalo a consultar</h1>
-						
+						<h1 style="padding-top: 10px; margin-bottom: 2px; margin-left: 90px">Ingrese Intervalo a consultar</h1>
+						<span style='font-size:30px;'>&#9755;</span>
 						<input type="submit" name="datetimes" id="dtp" style=" margin-right: 5px;"/>
-						
 						<input type="submit" value="Consultar" id="button"/>
+						<input type="range" id="range" class="slider" style="display: none; float:left;">
+						
 					</div>
 				</section>
 

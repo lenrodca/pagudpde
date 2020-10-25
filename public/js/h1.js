@@ -1,8 +1,10 @@
 window.onload = function(){
     var lat, lon, fecha, hora, mensaj, poli;
+    var marcador = L.marker([0, 0]);
     var f1,f2,h1,h2,btn,def;
     def = this.document.getElementById("dtp")
     var road=[];
+    var roadtime=[];
     btn = this.document.getElementById("button");
     let map = L.map('map').setView([10.99304, -74.82814], 12);
     const tileurl2 = 'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -12,7 +14,7 @@ window.onload = function(){
     marcador.addTo(map);
     const date = new Date();
     var mes = (date.getMonth()+1)*0.01;
-    def.value= date.getFullYear()+ "-" + mes.toString().slice(2,5) + "-" + date.getDate();
+    def.value= date.getFullYear()+ "sdferfsad" + mes.toString().slice(2,5) + "-" + date.getDate();
     $(function() {
         $('input[name="datetimes"]').daterangepicker({
           timePicker: true,
@@ -68,10 +70,18 @@ window.onload = function(){
                     lat: d.latitud,
                     lon: d.longitud,
                 } 
+                roadtime[i]=d.fechaYhora
             });
 
 
             poli = L.polyline(road).addTo(map);
+            let range = document.getElementById("range")
+            range.min = 0
+            range.max= road.length -1
+            range.oninput = ()=>{
+                marcador.setLatLng(road[range.value]).addTo(map)
+            }
+            range.style.display="block"
         }
             
 
