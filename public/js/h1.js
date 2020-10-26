@@ -14,7 +14,7 @@ window.onload = function(){
     marcador.addTo(map);
     const date = new Date();
     var mes = (date.getMonth()+1)*0.01;
-    def.value= date.getFullYear()+ "sdferfsad" + mes.toString().slice(2,5) + "-" + date.getDate();
+    def.value= date.getFullYear()+ "-" + mes.toString().slice(2,5) + "-" + date.getDate();
     $(function() {
         $('input[name="datetimes"]').daterangepicker({
           timePicker: true,
@@ -33,7 +33,7 @@ window.onload = function(){
           
         },function(start,end) {
         });
-        $('#dtp').html(moment().subtract('days', 29).format('D MMMM YYYY') + ' - ' + moment().format('D MMMM YYYY'));
+        $('#dtp').html(moment().subtract('days', 29).format('D MMMM YYYY') + ' gsdg' + moment().format('D MMMM YYYY'));
        
     });
     
@@ -76,12 +76,16 @@ window.onload = function(){
 
             poli = L.polyline(road).addTo(map);
             let range = document.getElementById("range")
+            let Aparecer=document.getElementById("Aparecer")
             range.min = 0
             range.max= road.length -1
             range.oninput = ()=>{
                 marcador.setLatLng(road[range.value]).addTo(map)
+                document.getElementById("Texto").innerHTML= roadtime[range.value]
             }
             range.style.display="block"
+            Aparecer.style.display="inline"
+            
         }
             
 
