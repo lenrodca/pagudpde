@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <!--
 	Broadcast by TEMPLATED
 	templated.co @templatedco
@@ -10,25 +10,33 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="../public/css/hojadisenopagina.css">
-		<link rel="stylesheet" href="../public/css/slider.css">
+		<link rel="stylesheet" href="../public/css/hojadisenopagina.css" />
+		<link rel="stylesheet" href="../public/css/slider.css" />
 		<link
 			rel="stylesheet"
 			href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css"
 		/>
-		
-		<link rel="stylesheet" type="text/css" href="../public/css/datetimepicker.css" />
-		<link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@500&display=swap" rel="stylesheet">
-		</head>
-	<body class="subpage">
 
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="../public/css/datetimepicker.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@500&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="subpage">
 		<!-- Header -->
 		<header id="header">
-			<h1><a href="#">La Ruta<span> de Tío Rico</span></a></h1>
+			<h1>
+				<a href="#">La Ruta<span> de Tío Rico</span></a>
+			</h1>
 			<a href="#menu">Menu</a>
 		</header>
 
-	<!-- Nav -->
+		<!-- Nav -->
 		<nav id="menu">
 			<ul class="links">
 				<li><a href="/#main">Tiempo Real</a></li>
@@ -36,41 +44,48 @@
 				<li><a href="/historicos2">Historicos (Espacio)</a></li>
 			</ul>
 		</nav>
-			
-			
 
 		<!-- Main -->
-			<div id="main">
+		<div id="main">
 			<!-- Consultas -->
-				<section class="Boton">
-					<div class="Boton">
-						<h1 style="padding-top: 10px; margin-left: 90px; float: left;">Ingrese Intervalo a consultar</h1>
-					</div>
-					<div>
-						<h1 id="Aparecer" style="padding-top: 10px; margin-bottom: 2px; margin-right: 180px; margin-left: 200px; float: right;display: none;">Deslice para encontrar ubicación</h1>
-						<br> </br>
-						<text id="Texto" style="position: absolute;right: 250px; top: 115px ;font-size: large; "></text>
-					</div>
-						<div class="Boton">
-						<input type="range" id="range" class="slider" style="display: none;position: absolute;top:150px ;margin-right:110px;">
-						<span style='font-size:30px;'>&#9755;</span>
-						<input type="submit" name="datetimes" id="dtp" style=" margin-right: 5px;"/>
-						<input type="submit" value="Consultar" id="button"/>
-						
-						
-					</div>
-					
-				</section>
+			<section class="Boton">
+				<div>
+					<h1 style="padding-top: 10px; margin-bottom: 2px; margin-left: 90px">
+						Seleccione vehículo a consultar
+					</h1>
+					<select id="popup-historicos">
+						<option value="1">Vehículo 1</option>
+						<option value="2">Vehículo 2</option>
+					</select>
+				</div>
+				<div class="Boton">
+					<h1 style="padding-top: 10px; margin-bottom: 2px; margin-left: 90px">
+						Ingrese Intervalo a consultar
+					</h1>
+					<span style="font-size: 30px">&#9755;</span>
+					<input
+						type="submit"
+						name="datetimes"
+						id="dtp"
+						style="margin-right: 5px"
+					/>
+					<input type="submit" value="Consultar" id="button" />
+					<input
+						type="range"
+						id="range"
+						class="slider"
+						style="display: none; float: left"
+					/>
+				</div>
+			</section>
 
 			<!-- One -->
-				<section class="wrapper style1"style="padding-top: 10px;">
-					
-					<div class="punto2" style="padding-top: 10px;">
-						<div id="map" style="height: 530px; width: 1250px;"></div>
-					</div>
-				</section>
-
-			</div>
+			<section class="wrapper style1" style="padding-top: 10px">
+				<div class="punto2" style="padding-top: 10px">
+					<div id="map" style="height: 530px; width: 1250px"></div>
+				</div>
+			</section>
+		</div>
 
 		<!-- Footer -->
 		<footer id="footer">
@@ -104,25 +119,49 @@
 			</div>
 			<div class="copyright">
 				<ul class="icons">
-					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
+					<li>
+						<a href="#" class="icon fa-twitter"
+							><span class="label">Twitter</span></a
+						>
+					</li>
+					<li>
+						<a href="#" class="icon fa-facebook"
+							><span class="label">Facebook</span></a
+						>
+					</li>
+					<li>
+						<a href="#" class="icon fa-instagram"
+							><span class="label">Instagram</span></a
+						>
+					</li>
+					<li>
+						<a href="#" class="icon fa-snapchat"
+							><span class="label">Snapchat</span></a
+						>
+					</li>
 				</ul>
-				&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Coverr</a>. Video: <a href="https://coverr.co">Coverr</a>.
+				&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>.
+				Images: <a href="https://unsplash.com">Coverr</a>. Video:
+				<a href="https://coverr.co">Coverr</a>.
 			</div>
 		</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
-			<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script> -->
-			<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-			<script src="/js/h1.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+		<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script> -->
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+		></script>
+		<script src="/js/h1.js"></script>
 	</body>
 </html>
