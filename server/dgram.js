@@ -12,7 +12,12 @@ server.on('message', (msg, rinfo) => {
 	console.log(`server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
 	mensaje = msg;
 	msg = msg.toString().split(',');
-	msg = { latitud: msg[0], longitud: msg[1], fechaYhora: msg[2] };
+	msg = {
+		latitud: msg[0],
+		longitud: msg[1],
+		fechaYhora: msg[2],
+		id_camion: msg[3],
+	};
 	let sql = 'INSERT INTO localitation SET ?';
 	database.query(sql, msg, (err, result) => {
 		if (err) throw err;
