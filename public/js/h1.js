@@ -5,6 +5,7 @@ window.onload = function () {
 	def = this.document.getElementById('dtp');
 	var road = [];
 	var roadtime = [];
+	var mediciones = [];
 	btn = this.document.getElementById('button');
 	let map = L.map('map').setView([10.99304, -74.82814], 12);
 	const tileurl2 = 'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -96,21 +97,24 @@ window.onload = function () {
 						lon: d.longitud,
 					};
 					roadtime[i] = d.fechaYhora;
+					mediciones[i] = d.medicion;
 				});
 
 				poli = L.polyline(road).addTo(map);
 
 				let range = document.getElementById('range');
-				let Aparecer=document.getElementById("Aparecer")
+				let Aparecer = document.getElementById('Aparecer');
 				range.min = 0;
 				range.max = road.length - 1;
 				range.oninput = () => {
 					marcador.setLatLng(road[range.value]).addTo(map);
-					document.getElementById("Texto").innerHTML= roadtime[range.value]
+					document.getElementById('Texto').innerHTML = `Su fecha es : ${
+						roadtime[range.value]
+					} / La medición es (en %) : ${mediciones[range.value]}`;
 				};
 			}
 			range.style.display = 'block';
-			Aparecer.style.display="inline"
+			Aparecer.style.display = 'inline';
 		} else if (opcion == 2) {
 			let resp = await fetch('/h12', {
 				method: 'POST',
@@ -136,23 +140,27 @@ window.onload = function () {
 						lat: d.latitud,
 						lon: d.longitud,
 					};
+
 					roadtime[i] = d.fechaYhora;
+					mediciones[i] = d.medicion;
 				});
 
 				poli = L.polyline(road).addTo(map);
 				poli.setStyle({ color: 'red' });
 
 				let range = document.getElementById('range');
-				let Aparecer=document.getElementById("Aparecer")
+				let Aparecer = document.getElementById('Aparecer');
 				range.min = 0;
 				range.max = road.length - 1;
 				range.oninput = () => {
 					marcador.setLatLng(road[range.value]).addTo(map);
-					document.getElementById("Texto").innerHTML= roadtime[range.value]
+					document.getElementById('Texto').innerHTML = `Su fecha es : ${
+						roadtime[range.value]
+					} / La medición es (en %) : ${mediciones[range.value]}`;
 				};
 			}
 			range.style.display = 'block';
-			Aparecer.style.display="inline"
+			Aparecer.style.display = 'inline';
 		}
 	});
 };

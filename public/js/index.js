@@ -38,6 +38,7 @@ async function update1() {
 			latitud = json['latitud'];
 			longitud = json['longitud'];
 			fecha_hora = json['fechaYhora'];
+			medicion = json['medicion'];
 
 			let NewLatLng = new L.LatLng(latitud, longitud);
 			if (!poly) {
@@ -45,7 +46,9 @@ async function update1() {
 			} else {
 				poly.addLatLng(NewLatLng);
 			}
-
+			document.getElementById(
+				'medicion1'
+			).innerHTML = `Medición (en %) : ${medicion}`;
 			document.getElementById(
 				'showLatitude'
 			).innerHTML = `Latitud : ${latitud}`;
@@ -75,6 +78,7 @@ async function update2() {
 			longitud = json['longitud'];
 			fecha_hora = json['fechaYhora'];
 			id_camion = json['id_camion'];
+			medicion = json['medicion'];
 
 			let NewLatLng2 = new L.LatLng(latitud, longitud);
 
@@ -85,7 +89,9 @@ async function update2() {
 			}
 
 			poly2.setStyle({ color: 'red' });
-
+			document.getElementById(
+				'medicion2'
+			).innerHTML = `Medición (en %) : ${medicion}`;
 			document.getElementById(
 				'showLatitude2'
 			).innerHTML = `Latitud : ${latitud}`;

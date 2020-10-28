@@ -17,6 +17,7 @@ server.on('message', (msg, rinfo) => {
 		longitud: msg[1],
 		fechaYhora: msg[2],
 		id_camion: msg[3],
+		medicion: msg[4],
 	};
 	let sql = 'INSERT INTO localitation SET ?';
 	database.query(sql, msg, (err, result) => {
