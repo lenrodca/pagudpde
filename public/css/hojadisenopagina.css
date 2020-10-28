@@ -66,7 +66,9 @@ img{
 	height: auto;
 	position: absolute;
 	right: 0px;
-	
+	display: none;
+	top:230px ;
+	margin-right:110px;border: solid salmon"
 }
 
 .Boton{
@@ -77,5 +79,27 @@ img{
 	margin-bottom: 15px;
 	margin-left: 10px;
 	overflow: visible;
+	
 }
 
+#popup-historicos{
+	width: 8%;
+	margin-left: 15%;
+	text-align: center;
+}
+
+#Aparecer{
+	padding-top: 10px; 
+	margin-bottom: 2px; 
+	margin-right: 180px; 
+	margin-left: 200px; 
+	float: right;display: none; 
+
+}
+#Texto{
+	position: absolute;
+	right: 250px; 
+	top: 190px ;
+	font-size: large; 
+
+}
