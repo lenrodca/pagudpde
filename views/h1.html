@@ -40,42 +40,34 @@
 		<nav id="menu">
 			<ul class="links">
 				<li><a href="/#main">Tiempo Real</a></li>
-				<li><a href="/historicos1">Historicos (Tiempo)</a></li>
-				<li><a href="/historicos2">Historicos (Espacio)</a></li>
+				<li><a href="/historicos1">Históricos</a></li>
 			</ul>
 		</nav>
 
 		<!-- Main -->
 		<div id="main">
 			<!-- Consultas -->
-			<section class="Boton">
+			<section class="Boton" >
 				<div>
-					<h1 style="padding-top: 10px; margin-bottom: 2px; margin-left: 90px">
-						Seleccione vehículo a consultar
+					<h1 style="padding-top: 10px; position:relative;margin-bottom: 2px; margin-left: 90px; width: 26%;border: solid salmon">
+						Seleccione vehículo a consultar:
 					</h1>
-					<select id="popup-historicos">
+					<select id="popup-historicos" style=" position: relative;margin-top: 1px;border: solid salmon">
 						<option value="1">Vehículo 1</option>
 						<option value="2">Vehículo 2</option>
 					</select>
 				</div>
 				<div class="Boton">
-					<h1 style="padding-top: 10px; margin-bottom: 2px; margin-left: 90px">
+					<h1 style="padding-top: 10px; margin-left: 90px; float: left; border: solid salmon">
 						Ingrese Intervalo a consultar
 					</h1>
-					<span style="font-size: 30px">&#9755;</span>
-					<input
-						type="submit"
-						name="datetimes"
-						id="dtp"
-						style="margin-right: 5px"
-					/>
-					<input type="submit" value="Consultar" id="button" />
-					<input
-						type="range"
-						id="range"
-						class="slider"
-						style="display: none; float: left"
-					/>
+					<h1 id="Aparecer" >Deslice para encontrar ubicación</h1>
+					<br> </br>
+					<text id="Texto" ></text>
+					<input type="range" id="range" class="slider" >
+					<span style='font-size:30px;'>&#9755;</span>
+					<input type="submit" name="datetimes" id="dtp" style=" margin-right: 5px;border: solid salmon"/>
+					<input type="submit" value="Consultar" id="button"/>
 				</div>
 			</section>
 
