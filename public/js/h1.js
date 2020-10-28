@@ -112,9 +112,10 @@ window.onload = function () {
 						roadtime[range.value]
 					} / La medición es (en %) : ${mediciones[range.value]}`;
 				};
+				range.style.display = 'block';
+				Aparecer.style.display = 'inline';
 			}
-			range.style.display = 'block';
-			Aparecer.style.display = 'inline';
+			
 		} else if (opcion == 2) {
 			let resp = await fetch('/h12', {
 				method: 'POST',
@@ -158,9 +159,10 @@ window.onload = function () {
 						roadtime[range.value]
 					} / La medición es (en %) : ${mediciones[range.value]}`;
 				};
+				range.style.display = 'block';
+				Aparecer.style.display = 'inline';
 			}
-			range.style.display = 'block';
-			Aparecer.style.display = 'inline';
+			
 		}
 	});
 };
