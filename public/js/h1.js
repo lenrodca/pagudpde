@@ -97,6 +97,9 @@ window.onload = function () {
 			}
 			if (mensaje.length == 0) {
 				alert('Datos vacios, no hay nada que mostrar');
+				range1.style.display = 'none';
+				Aparecer1.style.display = 'none';
+				Texto1.style.display='none'
 			} else {
 				mensaje.map((d, i) => {
 					road[i] = {
@@ -146,6 +149,9 @@ window.onload = function () {
 			}
 			if (mensaje.length == 0) {
 				alert('Datos vacios, no hay nada que mostrar');
+				range2.style.display = 'none';
+				Aparecer2.style.display = '	none';
+				Texto2.style.display='none'
 			} else {
 				mensaje.map((d, i) => {
 					road[i] = {
@@ -192,7 +198,10 @@ window.onload = function () {
 			marcador = L.marker([0, 0]);
 			marcador.addTo(map);
 			if (mensaje.length == 0) {
-				alert('Datos vacios, no hay nada que mostrar');
+				alert('Datos vacios, no hay nada que mostrar para el vehículo 1');
+				range1.style.display = 'none';
+				Aparecer1.style.display = 'none';
+				Texto1.style.display='none'
 			} else {
 				mensaje.map((d, i) => {
 					road[i] = {
@@ -233,7 +242,10 @@ window.onload = function () {
 			marcador2.addTo(map);
 			
 			if (mensaje2.length == 0) {
-				alert('Datos vacios, no hay nada que mostrar');
+				alert('Datos vacios, no hay nada que mostrar para el vehículo 2');
+				range2.style.display = 'none';
+				Aparecer2.style.display = '	none';
+				Texto2.style.display='none'
 			} else {
 				mensaje2.map((d, i) => {
 					road2[i] = {
