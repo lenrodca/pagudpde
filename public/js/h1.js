@@ -90,10 +90,14 @@ window.onload = function () {
 			console.log(mensaje);
 			road = [];
 			map.removeLayer(marcador);
+			map.removeLayer(marcador2);
 			marcador = L.marker([0, 0]);
 			marcador.addTo(map);
 			if (poli) {
 				map.removeLayer(poli);
+			}
+			if (poli2) {
+				map.removeLayer(poli2);
 			}
 			if (mensaje.length == 0) {
 				alert('Datos vacios, no hay nada que mostrar');
@@ -141,11 +145,16 @@ window.onload = function () {
 			mensaje = await resp.json();
 			console.log(mensaje);
 			map.removeLayer(marcador);
+			map.removeLayer(marcador2);
+
 			road = [];
 			marcador = L.marker([0, 0], { icon: greenIcon });
 			marcador.addTo(map);
 			if (poli) {
 				map.removeLayer(poli);
+			}
+			if (poli2) {
+				map.removeLayer(poli2);
 			}
 			if (mensaje.length == 0) {
 				alert('Datos vacios, no hay nada que mostrar');
