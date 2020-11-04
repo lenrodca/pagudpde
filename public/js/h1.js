@@ -76,6 +76,9 @@ window.onload = function () {
 		var popup = document.getElementById('popup-historicos');
 		var opcion = popup.value;
 		if (opcion == 1) {
+			range2.style.display = 'none';
+			Aparecer2.style.display = 'none';
+			Texto2.style.display='none'
 			let resp = await fetch('/h11', {
 				method: 'POST',
 				body: JSON.stringify(data),
@@ -118,9 +121,13 @@ window.onload = function () {
 				};
 				range1.style.display = 'block';
 				Aparecer1.style.display = 'inline';
+				Texto1.style.display='list-item';
 			}
 			
 		} else if (opcion == 2) {
+			range1.style.display = 'none';
+			Aparecer1.style.display = 'none';
+			Texto1.style.display='none'
 			let resp = await fetch('/h12', {
 				method: 'POST',
 				body: JSON.stringify(data),
@@ -165,6 +172,7 @@ window.onload = function () {
 				};
 				range2.style.display = 'block';
 				Aparecer2.style.display = 'inline';
+				Texto2.style.display='list-item';
 			}
 		}else if(opcion==3){
 			if (poli) {
@@ -209,6 +217,7 @@ window.onload = function () {
 				};
 				range1.style.display = 'block';
 				Aparecer1.style.display = 'inline';
+				Texto1.style.display='list-item';
 			}
 			let resp2 = await fetch('/h12', {
 				method: 'POST',
@@ -250,6 +259,7 @@ window.onload = function () {
 				};
 				range2.style.display = 'block';
 				Aparecer2.style.display = 'inline';
+				Texto2.style.display='list-item';
 			}
 		}
 	});

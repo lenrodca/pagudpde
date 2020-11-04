@@ -64,47 +64,43 @@ img{
 }
 #range1{
 	height: auto;
-	/* position: absolute; */
-	/* right: 0px; */
-	/* display: none; */
-	/* top:230px ; */
-	margin-right:110px;border: solid salmon"
-}
+	display: none;
+	}
 #range2{
 	height: auto;
-	/* position: absolute; */
-	/* right: 0px; */
-	/* display: none; */
-	/* top:230px ; */
-	margin-right:110px;border: solid salmon"
+	display: none;
 }
 .Boton{
 	font-size: x-large;
 	text-align: left; 
 	color:white;
 	margin-top: auto;
-	margin-bottom: 15px;
+	margin-bottom: 5px;
 	margin-left: 10px;
 	overflow: visible;
 	
 }
 
 #popup-historicos{
-	width: 20%;
+	width: 22%;
 	margin-left: 2%;
 	float: right;
 }
 
 #Aparecer1{
-	font-size: x-large;
+	font-size: large;
+	display: none;
 }
 
 #Aparecer2{
-	font-size: x-large;
+	font-size: large;
+	display: none;
 }
 #Texto1{
-	font-size: large; 
+	font-size: 15px; 
+	display: none;
 }
 #Texto2{
-	font-size: large; 
+	font-size: 15px; 
+	display: none;	
 }
