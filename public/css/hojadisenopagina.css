@@ -62,15 +62,22 @@ img{
 	margin-left: auto;
 	margin-right: auto;
 }
-#range{
+#range1{
 	height: auto;
-	position: absolute;
-	right: 0px;
-	display: none;
-	top:230px ;
+	/* position: absolute; */
+	/* right: 0px; */
+	/* display: none; */
+	/* top:230px ; */
 	margin-right:110px;border: solid salmon"
 }
-
+#range2{
+	height: auto;
+	/* position: absolute; */
+	/* right: 0px; */
+	/* display: none; */
+	/* top:230px ; */
+	margin-right:110px;border: solid salmon"
+}
 .Boton{
 	font-size: x-large;
 	text-align: left; 
@@ -88,22 +95,19 @@ img{
 	float: right;
 }
 
-#Aparecer{
-	padding-top: 10px; 
-	margin-bottom: 2px; 
-	margin-right: 180px; 
-	margin-left: 20%; 
-	float: right;
-	display: none; 
-
+#Aparecer1{
+	font-size: x-large;
 }
-#Texto{
-	position: absolute;
-	right: 6%; 
-	top: 155px ;
+
+#Aparecer2{
+	font-size: x-large;
+}
+#Texto1{
 	font-size: large; 
 }
-
+#Texto2{
+	font-size: large; 
+}
 
 
 

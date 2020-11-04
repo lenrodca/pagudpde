@@ -48,28 +48,34 @@
 		<div id="main">
 			<!-- Consultas -->
 			<section class="Boton" >
-				<div>
-					<h1 style="padding-top: 10px;margin-bottom: 2px; margin-left: 100px; width: 38%;">
+				<div style="width:50%;border:solid salmon" >
+					<h1 style="padding-top: 10px;margin-bottom: 2px; margin-left: 100px;width:80%;border: solid salmon">
 						Seleccione vehículo a consultar:
-						<span style='font-size:26px; margin-left: 30px;'>&#9755;</span>
-						<select id="popup-historicos">
-							<span style='font-size:30px; margin-left: 2%;'>&#9755;</span>
-							<option value="1">Vehículo 1</option>
-							<option value="2">Vehículo 2</option>
+						<select id="popup-historicos" style="overflow: visible;border: solid salmon; margin-inline-end: 10%;">
+							<option value="1"><span style='font-size:26px;'>&#9755;</span>Vehículo 1</option>
+							<option value="2"><span style='font-size:26px;'>&#9755;</span>Vehículo 2</option>
+							<option value="3"><span style='font-size:26px;'>&#9755;</span>Ambos</option>
 						</select>
+					</h1>
 				</div>
-				<div class="Boton">
-					<h1 style="padding-top: 10px; margin-left: 90px; float: left; ">
+				<div class="Boton" style="width: 45%;border:solid salmon">
+					<h1 style="padding-top: 10px; margin-left: 90px; float: left; border:solid salmon">
 						Ingrese Intervalo a consultar
 					</h1>
-					<h1 id="Aparecer" >Deslice para encontrar ubicación</h1>
 					<br> </br>
-					<text id="Texto" ></text>
+					<span style='font-size:30px; margin-left: 2%;border:solid salmon'>&#9755;</span>
+					<input type="submit" name="datetimes" id="dtp" style=" margin-right: 5px;border:solid salmon"/>
+					<input type="submit" value="Consultar" id="button" style="border:solid salmon"/>
+				</div>
+				<div class="Boton" style="width: 45%;border:solid salmon">
 					
-					<input type="range" id="range" class="slider" style="position: absolute; right: 0.2%; top: 199px ;" >
-					<span style='font-size:30px; margin-left: 2%;'>&#9755;</span>
-					<input type="submit" name="datetimes" id="dtp" style=" margin-right: 5px;"/>
-					<input type="submit" value="Consultar" id="button"/>
+					<h1 id="Aparecer1" style="border:solid salmon; margin-right: 130px;" >Deslice para encontrar ubicación vehículo 1</h1>
+					<text id="Texto1"  style="border:solid salmon">sdfsd</text>
+					<input type="range" id="range1" class="slider" style=" border:solid salmon" >
+					<h1 id="Aparecer2" style="border:solid salmon;margin-right: 130px;">Deslice para encontrar ubicación vehículo 2</h1>
+					<text id="Texto2" style="border:solid salmon" >sdfsdf</text>
+					<input type="range" id="range2" class="slider" style="border:solid salmon" >
+					
 				</div>
 			</section>
 

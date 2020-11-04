@@ -1,8 +1,12 @@
 window.onload = function () {
 	var lat, lon, fecha, hora, mensaj, poli, mensaje;
+	var mensaje2,poli2
 	var marcador = L.marker([0, 0]);
 	var f1, f2, h1, h2, btn, def;
 	def = this.document.getElementById('dtp');
+	var road2 = [];
+	var roadtime2 = [];
+	var mediciones2 = [];
 	var road = [];
 	var roadtime = [];
 	var mediciones = [];
@@ -102,18 +106,18 @@ window.onload = function () {
 
 				poli = L.polyline(road).addTo(map);
 
-				let range = document.getElementById('range');
-				let Aparecer = document.getElementById('Aparecer');
-				range.min = 0;
-				range.max = road.length - 1;
-				range.oninput = () => {
-					marcador.setLatLng(road[range.value]).addTo(map);
-					document.getElementById('Texto').innerHTML = `Su fecha es : ${
-						roadtime[range.value]
-					} / La medición es (en %) : ${mediciones[range.value]}`;
+				let range1 = document.getElementById('range1');
+				let Aparecer1 = document.getElementById('Aparecer1');
+				range1.min = 0;
+				range1.max = road.length - 1;
+				range1.oninput = () => {
+					marcador.setLatLng(road[range1.value]).addTo(map);
+					document.getElementById('Texto1').innerHTML = `Su fecha es : ${
+						roadtime[range1.value]
+					} / La medición es (en %) : ${mediciones[range1.value]}`;
 				};
-				range.style.display = 'block';
-				Aparecer.style.display = 'inline';
+				range1.style.display = 'block';
+				Aparecer1.style.display = 'inline';
 			}
 			
 		} else if (opcion == 2) {
@@ -149,20 +153,104 @@ window.onload = function () {
 				poli = L.polyline(road).addTo(map);
 				poli.setStyle({ color: 'red' });
 
-				let range = document.getElementById('range');
-				let Aparecer = document.getElementById('Aparecer');
-				range.min = 0;
-				range.max = road.length - 1;
-				range.oninput = () => {
-					marcador.setLatLng(road[range.value]).addTo(map);
-					document.getElementById('Texto').innerHTML = `Su fecha es : ${
-						roadtime[range.value]
-					} / La medición es (en %) : ${mediciones[range.value]}`;
+				let range2 = document.getElementById('range2');
+				let Aparecer2 = document.getElementById('Aparecer2');
+				range2.min = 0;
+				range2.max = road.length - 1;
+				range2.oninput = () => {
+					marcador.setLatLng(road[range2.value]).addTo(map);
+					document.getElementById('Texto2').innerHTML = `Su fecha es : ${
+						roadtime[range2.value]
+					} / La medición es (en %) : ${mediciones[range2.value]}`;
 				};
-				range.style.display = 'block';
-				Aparecer.style.display = 'inline';
+				range2.style.display = 'block';
+				Aparecer2.style.display = 'inline';
 			}
+		}else if(opcion==3){
+			if (poli) {
+				map.removeLayer(poli);
+			}
+			map.removeLayer(marcador);
+			let resp = await fetch('/h11', {
+				method: 'POST',
+				body: JSON.stringify(data),
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
+			mensaje = await resp.json();
+			console.log(mensaje);
+			road = [];
+			marcador = L.marker([0, 0]);
+			marcador.addTo(map);
+			if (mensaje.length == 0) {
+				alert('Datos vacios, no hay nada que mostrar');
+			} else {
+				mensaje.map((d, i) => {
+					road[i] = {
+						lat: d.latitud,
+						lon: d.longitud,
+					};
+					roadtime[i] = d.fechaYhora;
+					mediciones[i] = d.medicion;
+				});
+
+				poli = L.polyline(road).addTo(map);
+
+				let range1 = document.getElementById('range1');
+				let Aparecer1 = document.getElementById('Aparecer1');
+				range1.min = 0;
+				range1.max = road.length - 1;
+				range1.oninput = () => {
+					marcador.setLatLng(road[range1.value]).addTo(map);
+					document.getElementById('Texto1').innerHTML = `Su fecha es : ${
+						roadtime[range1.value]
+					} / La medición es (en %) : ${mediciones[range1.value]}`;
+				};
+				range1.style.display = 'block';
+				Aparecer1.style.display = 'inline';
+			}
+			let resp2 = await fetch('/h12', {
+				method: 'POST',
+				body: JSON.stringify(data),
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
+			mensaje2 = await resp2.json();
+			console.log(mensaje2);
+			road2 = [];
+			marcador2 = L.marker([0, 0], { icon: greenIcon });
+			marcador2.addTo(map);
 			
+			if (mensaje2.length == 0) {
+				alert('Datos vacios, no hay nada que mostrar');
+			} else {
+				mensaje2.map((d, i) => {
+					road2[i] = {
+						lat: d.latitud,
+						lon: d.longitud,
+					};
+					roadtime2[i] = d.fechaYhora;
+					mediciones2[i] = d.medicion;
+				});
+
+				poli2 = L.polyline(road2).addTo(map);
+				poli2.setStyle({ color: 'red' });
+
+				let range2 = document.getElementById('range2');
+				let Aparecer2 = document.getElementById('Aparecer2');
+				range2.min = 0;
+				range2.max = road2.length - 1;
+				range2.oninput = () => {
+					marcador2.setLatLng(road2[range2.value]).addTo(map);
+					document.getElementById('Texto2').innerHTML = `Su fecha es : ${
+						roadtime2[range2.value]
+					} / La medición es (en %) : ${mediciones2[range2.value]}`;
+				};
+				range2.style.display = 'block';
+				Aparecer2.style.display = 'inline';
+			}
 		}
 	});
 };
