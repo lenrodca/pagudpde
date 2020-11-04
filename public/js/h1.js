@@ -2,6 +2,7 @@ window.onload = function () {
 	var lat, lon, fecha, hora, mensaj, poli, mensaje;
 	var mensaje2,poli2
 	var marcador = L.marker([0, 0]);
+	var marcador2 = L.marker([0, 0]);
 	var f1, f2, h1, h2, btn, def;
 	def = this.document.getElementById('dtp');
 	var road2 = [];
@@ -76,6 +77,10 @@ window.onload = function () {
 		var popup = document.getElementById('popup-historicos');
 		var opcion = popup.value;
 		if (opcion == 1) {
+			map.removeLayer(marcador2);
+			if (poli2) {
+				map.removeLayer(poli2);
+			}
 			range2.style.display = 'none';
 			Aparecer2.style.display = 'none';
 			Texto2.style.display='none'
@@ -90,15 +95,12 @@ window.onload = function () {
 			console.log(mensaje);
 			road = [];
 			map.removeLayer(marcador);
-			map.removeLayer(marcador2);
 			marcador = L.marker([0, 0]);
 			marcador.addTo(map);
 			if (poli) {
 				map.removeLayer(poli);
 			}
-			if (poli2) {
-				map.removeLayer(poli2);
-			}
+			
 			if (mensaje.length == 0) {
 				alert('Datos vacios, no hay nada que mostrar');
 				range1.style.display = 'none';
@@ -132,6 +134,10 @@ window.onload = function () {
 			}
 			
 		} else if (opcion == 2) {
+			map.removeLayer(marcador2);
+			if (poli2) {
+				map.removeLayer(poli2);
+			}
 			range1.style.display = 'none';
 			Aparecer1.style.display = 'none';
 			Texto1.style.display='none'
@@ -145,17 +151,13 @@ window.onload = function () {
 			mensaje = await resp.json();
 			console.log(mensaje);
 			map.removeLayer(marcador);
-			map.removeLayer(marcador2);
-
 			road = [];
 			marcador = L.marker([0, 0], { icon: greenIcon });
 			marcador.addTo(map);
 			if (poli) {
 				map.removeLayer(poli);
 			}
-			if (poli2) {
-				map.removeLayer(poli2);
-			}
+			
 			if (mensaje.length == 0) {
 				alert('Datos vacios, no hay nada que mostrar');
 				range2.style.display = 'none';
