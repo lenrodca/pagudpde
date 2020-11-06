@@ -94,6 +94,11 @@ function update1(){
 		map.removeLayer(marker);
 	}
 	marker = L.marker([latitud, longitud]).addTo(map);
+	c1.style.display = 'block';
+	med.style.display ='list-item';
+	showLat.style.display ='list-item';
+	showLong.style.display ='list-item';
+	showDate.style.display ='list-item';
 }
 function update2(){
 	med2.innerHTML = `Medición (en %) : ${medicion2}`;
@@ -104,17 +109,26 @@ function update2(){
 		map.removeLayer(marker2);
 	}
 	marker2 = L.marker([latitud2, longitud2],{icon: greenIcon}).addTo(map);
+	c2.style.display = 'block';
+	med2.style.display ='list-item';
+	showLat2.style.display ='list-item';
+	showLong2.style.display ='list-item';
+	showDate2.style.display ='list-item';
 }
 function mainF(){
 	llenado1();
 	llenado2();
 	if(value == 1){
-		c1.style.display = 'block';
-		c2.style.display = 'none'
-		med2.innerHTML = '';
-		showLat2.innerHTML = '';
-		showLong2.innerHTML = '';
-		showDate2.innerHTML = '';
+		// c1.style.display = 'block';
+		// med.style.display ='list-item';
+		// showLat.style.display ='list-item';
+		// showLong.style.display ='list-item';
+		// showDate.style.display ='list-item';
+		c2.style.display = 'none';
+		med2.style.display = 'none';
+		showLat2.style.display = 'none';
+		showLong2.style.display = 'none';
+		showDate2.style.display = 'none';
 		if(marker2){
 			map.removeLayer(marker2);
 		}
@@ -126,11 +140,11 @@ function mainF(){
 		map.flyTo(marker.getLatLng(), 15);
 	} else if(value == 2){
 		c1.style.display = 'none';
-		c2.style.display = 'block'
-		med.innerHTML = '';
-		showLat.innerHTML = '';
-		showLong.innerHTML = '';
-		showDate.innerHTML = '';
+		med.style.display = 'none';
+		showLat.style.display = 'none';
+		showLong.style.display = 'none';
+		showDate.style.display = 'none';
+				
 		map.removeLayer(marker)
 		if(poly){
 			map.removeLayer(poly)
