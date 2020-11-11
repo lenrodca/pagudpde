@@ -44,31 +44,30 @@ let poly2;
 L.control.scale().addTo(map);
 
 async function llenado1() {
-		let resp = await fetch('/data1', {
-			headers: {
-				'Content-Type': 'application/json',
-				},
-			});
-		let json = await resp.json();
-		latitud = json['latitud'];
-		longitud = json['longitud'];
-		fecha_hora = json['fechaYhora'];
-		medicion = json['medicion'];
+	let resp = await fetch('/data1', {
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	});
+	let json = await resp.json();
+	latitud = json['latitud'];
+	longitud = json['longitud'];
+	fecha_hora = json['fechaYhora'];
+	medicion = json['medicion'];
 
-		let NewLatLng = new L.LatLng(latitud, longitud);
-		if (!poly) {
-			poly = L.polyline([{ lat: latitud, lon: longitud }])
-		} else {
-			poly.addLatLng(NewLatLng);
-		}
-		
+	let NewLatLng = new L.LatLng(latitud, longitud);
+	if (!poly) {
+		poly = L.polyline([{ lat: latitud, lon: longitud }]);
+	} else {
+		poly.addLatLng(NewLatLng);
+	}
 }
 async function llenado2() {
 	let resp = await fetch('/data2', {
 		headers: {
 			'Content-Type': 'application/json',
-			},
-		});
+		},
+	});
 	let json = await resp.json();
 	latitud2 = json['latitud'];
 	longitud2 = json['longitud'];
@@ -77,16 +76,15 @@ async function llenado2() {
 
 	let NewLatLng = new L.LatLng(latitud2, longitud2);
 	if (!poly2) {
-		poly2 = L.polyline([{ lat: latitud2, lon: longitud2 }])
+		poly2 = L.polyline([{ lat: latitud2, lon: longitud2 }]);
 	} else {
 		poly2.addLatLng(NewLatLng);
 	}
-	poly2.setStyle({color: 'red'})
-	
+	poly2.setStyle({ color: 'red' });
 }
 
-function update1(){
-	med.innerHTML = `Medición (en %) : ${medicion}`;
+function update1() {
+	med.innerHTML = `Medición (en mm) : ${medicion}`;
 	showLat.innerHTML = `Latitud : ${latitud}`;
 	showLong.innerHTML = `Longitud : ${longitud}`;
 	showDate.innerHTML = `Fecha y hora : ${fecha_hora}`;
@@ -95,12 +93,12 @@ function update1(){
 	}
 	marker = L.marker([latitud, longitud]).addTo(map);
 	c1.style.display = 'block';
-	med.style.display ='list-item';
-	showLat.style.display ='list-item';
-	showLong.style.display ='list-item';
-	showDate.style.display ='list-item';
+	med.style.display = 'list-item';
+	showLat.style.display = 'list-item';
+	showLong.style.display = 'list-item';
+	showDate.style.display = 'list-item';
 }
-function update2(){
+function update2() {
 	med2.innerHTML = `Medición (en %) : ${medicion2}`;
 	showLat2.innerHTML = `Latitud : ${latitud2}`;
 	showLong2.innerHTML = `Longitud : ${longitud2}`;
@@ -108,17 +106,17 @@ function update2(){
 	if (marker2 !== null) {
 		map.removeLayer(marker2);
 	}
-	marker2 = L.marker([latitud2, longitud2],{icon: greenIcon}).addTo(map);
+	marker2 = L.marker([latitud2, longitud2], { icon: greenIcon }).addTo(map);
 	c2.style.display = 'block';
-	med2.style.display ='list-item';
-	showLat2.style.display ='list-item';
-	showLong2.style.display ='list-item';
-	showDate2.style.display ='list-item';
+	med2.style.display = 'list-item';
+	showLat2.style.display = 'list-item';
+	showLong2.style.display = 'list-item';
+	showDate2.style.display = 'list-item';
 }
-function mainF(){
+function mainF() {
 	llenado1();
 	llenado2();
-	if(value == 1){
+	if (value == 1) {
 		// c1.style.display = 'block';
 		// med.style.display ='list-item';
 		// showLat.style.display ='list-item';
@@ -129,30 +127,30 @@ function mainF(){
 		showLat2.style.display = 'none';
 		showLong2.style.display = 'none';
 		showDate2.style.display = 'none';
-		if(marker2){
+		if (marker2) {
 			map.removeLayer(marker2);
 		}
-		if(poly2){
+		if (poly2) {
 			map.removeLayer(poly2);
 		}
 		update1();
 		map.addLayer(poly);
 		map.flyTo(marker.getLatLng(), 15);
-	} else if(value == 2){
+	} else if (value == 2) {
 		c1.style.display = 'none';
 		med.style.display = 'none';
 		showLat.style.display = 'none';
 		showLong.style.display = 'none';
 		showDate.style.display = 'none';
-				
-		map.removeLayer(marker)
-		if(poly){
-			map.removeLayer(poly)
+
+		map.removeLayer(marker);
+		if (poly) {
+			map.removeLayer(poly);
 		}
 		update2();
 		map.addLayer(poly2);
 		map.flyTo(marker2.getLatLng(), 15);
-	}else{
+	} else {
 		c1.style.display = 'block';
 		c2.style.display = 'block';
 		update1();
@@ -161,10 +159,10 @@ function mainF(){
 		map.addLayer(poly2);
 	}
 }
-popup.onchange = function (){
+popup.onchange = function () {
 	value = popup.value;
 	console.log(value);
-}
+};
 setInterval(function () {
 	mainF();
 }, 1000);

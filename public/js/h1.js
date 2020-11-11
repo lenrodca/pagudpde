@@ -126,7 +126,7 @@ window.onload = function () {
 					marcador.setLatLng(road[range1.value]).addTo(map);
 					document.getElementById('Texto1').innerHTML = `Su fecha es : ${
 						roadtime[range1.value]
-					} / La medición es (en %) : ${mediciones[range1.value]}`;
+					} / La medición es (en mm) : ${mediciones[range1.value]}`;
 				};
 				range1.style.display = 'block';
 				Aparecer1.style.display = 'inline';
@@ -236,7 +236,7 @@ window.onload = function () {
 					marcador.setLatLng(road[range1.value]).addTo(map);
 					document.getElementById('Texto1').innerHTML = `Su fecha es : ${
 						roadtime[range1.value]
-					} / La medición es (en %) : ${mediciones[range1.value]}`;
+					} / La medición es (en mm) : ${mediciones[range1.value]}`;
 				};
 				range1.style.display = 'block';
 				Aparecer1.style.display = 'inline';
