@@ -1,6 +1,6 @@
 window.onload = function () {
 	var lat, lon, fecha, hora, mensaj, poli, mensaje;
-	var mensaje2,poli2
+	var mensaje2, poli2;
 	var marcador = L.marker([0, 0]);
 	var marcador2 = L.marker([0, 0]);
 	var f1, f2, h1, h2, btn, def;
@@ -83,7 +83,7 @@ window.onload = function () {
 			}
 			range2.style.display = 'none';
 			Aparecer2.style.display = 'none';
-			Texto2.style.display='none'
+			Texto2.style.display = 'none';
 			let resp = await fetch('/h11', {
 				method: 'POST',
 				body: JSON.stringify(data),
@@ -100,12 +100,12 @@ window.onload = function () {
 			if (poli) {
 				map.removeLayer(poli);
 			}
-			
+
 			if (mensaje.length == 0) {
 				alert('Datos vacios, no hay nada que mostrar');
 				range1.style.display = 'none';
 				Aparecer1.style.display = 'none';
-				Texto1.style.display='none'
+				Texto1.style.display = 'none';
 			} else {
 				mensaje.map((d, i) => {
 					road[i] = {
@@ -130,9 +130,8 @@ window.onload = function () {
 				};
 				range1.style.display = 'block';
 				Aparecer1.style.display = 'inline';
-				Texto1.style.display='list-item';
+				Texto1.style.display = 'list-item';
 			}
-			
 		} else if (opcion == 2) {
 			map.removeLayer(marcador2);
 			if (poli2) {
@@ -140,7 +139,7 @@ window.onload = function () {
 			}
 			range1.style.display = 'none';
 			Aparecer1.style.display = 'none';
-			Texto1.style.display='none'
+			Texto1.style.display = 'none';
 			let resp = await fetch('/h12', {
 				method: 'POST',
 				body: JSON.stringify(data),
@@ -157,12 +156,12 @@ window.onload = function () {
 			if (poli) {
 				map.removeLayer(poli);
 			}
-			
+
 			if (mensaje.length == 0) {
 				alert('Datos vacios, no hay nada que mostrar');
 				range2.style.display = 'none';
 				Aparecer2.style.display = '	none';
-				Texto2.style.display='none'
+				Texto2.style.display = 'none';
 			} else {
 				mensaje.map((d, i) => {
 					road[i] = {
@@ -189,11 +188,14 @@ window.onload = function () {
 				};
 				range2.style.display = 'block';
 				Aparecer2.style.display = 'inline';
-				Texto2.style.display='list-item';
+				Texto2.style.display = 'list-item';
 			}
-		}else if(opcion==3){
+		} else if (opcion == 3) {
 			if (poli) {
 				map.removeLayer(poli);
+			}
+			if (poli2) {
+				map.removeLayer(poli2);
 			}
 			map.removeLayer(marcador);
 			map.removeLayer(marcador2);
@@ -213,7 +215,7 @@ window.onload = function () {
 				alert('Datos vacios, no hay nada que mostrar para el vehículo 1');
 				range1.style.display = 'none';
 				Aparecer1.style.display = 'none';
-				Texto1.style.display='none'
+				Texto1.style.display = 'none';
 			} else {
 				mensaje.map((d, i) => {
 					road[i] = {
@@ -238,7 +240,7 @@ window.onload = function () {
 				};
 				range1.style.display = 'block';
 				Aparecer1.style.display = 'inline';
-				Texto1.style.display='list-item';
+				Texto1.style.display = 'list-item';
 			}
 			let resp2 = await fetch('/h12', {
 				method: 'POST',
@@ -252,12 +254,12 @@ window.onload = function () {
 			road2 = [];
 			marcador2 = L.marker([0, 0], { icon: greenIcon });
 			marcador2.addTo(map);
-			
+
 			if (mensaje2.length == 0) {
 				alert('Datos vacios, no hay nada que mostrar para el vehículo 2');
 				range2.style.display = 'none';
 				Aparecer2.style.display = '	none';
-				Texto2.style.display='none'
+				Texto2.style.display = 'none';
 			} else {
 				mensaje2.map((d, i) => {
 					road2[i] = {
@@ -283,7 +285,7 @@ window.onload = function () {
 				};
 				range2.style.display = 'block';
 				Aparecer2.style.display = 'inline';
-				Texto2.style.display='list-item';
+				Texto2.style.display = 'list-item';
 			}
 		}
 	});
