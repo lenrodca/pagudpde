@@ -196,6 +196,7 @@ window.onload = function () {
 				map.removeLayer(poli);
 			}
 			map.removeLayer(marcador);
+			map.removeLayer(marcador2);
 			let resp = await fetch('/h11', {
 				method: 'POST',
 				body: JSON.stringify(data),
